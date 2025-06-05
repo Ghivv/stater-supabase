@@ -1,0 +1,49 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache
+.pub/
+build/
+generated/
+
+# IntelliJ related
+.idea/
+*.iml
+
+# VS Code related
+.vscode/
+*.code-workspace
+
+# Mac related
+.DS_Store
+
+# Windows related
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+*.swp
+*.lock
+
+# Flutter specific
+.flutter/
+.vscode/templates
+
+
+join.dart
+release.bat
+standarize.dart
+references.dartx
+*.dartx
+
+*.zip
+
+RULE.md
+
+listing.dart
+listing.txt
+
+PROMPT.md

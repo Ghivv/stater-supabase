@@ -1,0 +1,27 @@
+include: package:flutter_lints/flutter.yaml
+linter:
+  rules:
+    avoid_print: false 
+    unused_local_variable: ignore 
+    always_declare_return_types: true 
+    prefer_const_constructors: true 
+    avoid_unnecessary_containers: true 
+    use_key_in_widget_constructors: true 
+    prefer_final_fields: true 
+    sort_child_properties_last: true 
+analyzer:
+  exclude:
+    - build/** 
+    - packages/** 
+    - .dart_tool/** 
+    - gen/** 
+  errors:
+    invalid_annotation_target: ignore 
+    missing_required_param: error 
+    unused_import: ignore warning 
+    deprecated_member_use: warning 
+    unnecessary_cast: ignore 
+    prefer_const_constructors: ignore
+strong-mode:
+  implicit-casts: false 
+  implicit-dynamic: false 

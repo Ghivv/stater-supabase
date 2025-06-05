@@ -1,0 +1,162 @@
+{
+  "project_info": {
+    "project_number": "393711867408",
+    "project_id": "zg-projects",
+    "storage_bucket": "zg-projects.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393711867408:android:d04dae034983118e0adc95",
+        "android_client_info": {
+          "package_name": "com.chargeofdarkness.pos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393711867408-ftapqbebj16ohqk1isa8he2em6erhrfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1yR-Kh_xoAywI5INbC1E_9Eih7ds6m98"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393711867408-881fujg1ajse005b8mifto5r9i6nqmv2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "393711867408-kemr8k7ftc2edhj090j63593acsaa8tr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chargeofdarkness.pos"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393711867408:android:01f3452399f55faa0adc95",
+        "android_client_info": {
+          "package_name": "com.cz.postra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393711867408-ftapqbebj16ohqk1isa8he2em6erhrfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1yR-Kh_xoAywI5INbC1E_9Eih7ds6m98"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393711867408-881fujg1ajse005b8mifto5r9i6nqmv2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "393711867408-kemr8k7ftc2edhj090j63593acsaa8tr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chargeofdarkness.pos"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393711867408:android:c00dcbc3b5ab14fe0adc95",
+        "android_client_info": {
+          "package_name": "com.example.background_service_clippboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393711867408-ftapqbebj16ohqk1isa8he2em6erhrfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1yR-Kh_xoAywI5INbC1E_9Eih7ds6m98"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393711867408-881fujg1ajse005b8mifto5r9i6nqmv2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "393711867408-kemr8k7ftc2edhj090j63593acsaa8tr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chargeofdarkness.pos"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393711867408:android:ed1abcf15eb83d1d0adc95",
+        "android_client_info": {
+          "package_name": "com.example.ciko_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393711867408-40qmvr0hvfjdoqe2o5nmie0840g3d53b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ciko_chat",
+            "certificate_hash": "6863fad6a2508b5f20bb9e7173fadc86527f8197"
+          }
+        },
+        {
+          "client_id": "393711867408-ftapqbebj16ohqk1isa8he2em6erhrfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1yR-Kh_xoAywI5INbC1E_9Eih7ds6m98"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393711867408-881fujg1ajse005b8mifto5r9i6nqmv2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "393711867408-kemr8k7ftc2edhj090j63593acsaa8tr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chargeofdarkness.pos"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
