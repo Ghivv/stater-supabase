@@ -31,7 +31,7 @@ class MainAppState extends State<MainApp> {
     GetIt.I.registerSingleton<MainAppState>(this);
   }
 
-  List<Locale> supportedLocales =  [
+  List<Locale> supportedLocales = [
     Locale('en'),
     Locale('ko'),
     Locale('id'),
@@ -59,7 +59,7 @@ class MainAppState extends State<MainApp> {
         highlightColor: Colors.transparent,
       ),
       debugShowCheckedModeBanner: false,
-      locale:  Locale(currentLocale),
+      locale: Locale(currentLocale),
       localizationsDelegates: const [
         FlutterQuillLocalizations.delegate,
         AppLocalizations.delegate,
@@ -72,7 +72,20 @@ class MainAppState extends State<MainApp> {
         Locale('ko'),
         Locale('id'),
       ],
-      home: AuthService().isLoggedIn() ? MainNavigationView() : LoginView(),
+      home: FutureBuilder<bool>(
+        future: AuthService().isLoggedInAsync(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Scaffold(
+              body: Center(child: CircularProgressIndicator()),
+            );
+          }
+          if (snapshot.hasData && snapshot.data == true) {
+            return const MainNavigationView();
+          }
+          return const LoginView();
+        },
+      ),
     );
   }
 }
