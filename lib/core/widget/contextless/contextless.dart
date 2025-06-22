@@ -5,7 +5,7 @@ GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 BuildContext get currentContext => navigatorKey.currentContext!;
 
 //snackbar success
-ss(String message) {
+void ss(String message) {
   var snackbar = SnackBar(
     content: Text(
       message,
@@ -19,7 +19,7 @@ ss(String message) {
 }
 
 //snackbar error
-se(String message) {
+void se(String message) {
   var snackbar = SnackBar(
     content: Text(
       message,
@@ -33,7 +33,7 @@ se(String message) {
 }
 
 //snackbar info
-si(String message) {
+void si(String message) {
   var snackbar = SnackBar(
     content: Text(
       message,
@@ -47,7 +47,7 @@ si(String message) {
 }
 
 //snackbar warning
-sw(String message) {
+void sw(String message) {
   var snackbar = SnackBar(
     content: Text(
       message,
@@ -61,7 +61,7 @@ sw(String message) {
 }
 
 //snackbar primary
-sp(String message) {
+void sp(String message) {
   var snackbar = SnackBar(
     content: Text(
       message,
@@ -75,7 +75,7 @@ sp(String message) {
 }
 
 //snackbar secondary
-ssn(String message) {
+void ssn(String message) {
   var snackbar = SnackBar(
     content: Text(
       message,

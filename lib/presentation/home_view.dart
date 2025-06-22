@@ -26,7 +26,7 @@ class _HomeViewState extends State<HomeView> {
     loadData();
   }
 
-  loadData() async {
+  Future<void> loadData() async {
     loading = true;
     setState(() {});
     try {
@@ -77,7 +77,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -85,66 +85,74 @@ class _HomeViewState extends State<HomeView> {
                 children: [
                   const Icon(
                     Icons.school,
-                    size: 32.0,
+                    size: 36.0,
+                    color: Colors.deepPurple,
                   ),
-                  const SizedBox(width: 8.0),
+                  const SizedBox(width: 12.0),
                   Text(
                     "Graduation Dashboard",
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.deepPurple,
+                        ),
                   ),
                 ],
               ),
-              const SizedBox(height: 20.0),
+              const SizedBox(height: 24.0),
               // Statistics Cards
               GridView.count(
                 crossAxisCount: 2,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                mainAxisSpacing: 16.0,
-                crossAxisSpacing: 16.0,
-                childAspectRatio: 1.5,
+                mainAxisSpacing: 20.0,
+                crossAxisSpacing: 20.0,
+                childAspectRatio: 1.6,
                 children: [
                   _buildStatCard(
                     "Total Students",
                     statistics['totalStudents'].toString(),
                     Icons.people,
-                    Colors.blue,
+                    const [Color(0xFF6A11CB), Color(0xFF2575FC)],
                   ),
                   _buildStatCard(
                     "Total Invitations",
                     statistics['totalInvitations'].toString(),
                     Icons.mail,
-                    Colors.green,
+                    const [Color(0xFF11998E), Color(0xFF38EF7D)],
                   ),
                   _buildStatCard(
                     "Upcoming Events",
                     statistics['upcomingEvents'].toString(),
                     Icons.event,
-                    Colors.orange,
+                    const [Color(0xFFF7971E), Color(0xFFFFD200)],
                   ),
                   _buildStatCard(
                     "Confirmed Attendees",
                     statistics['confirmedAttendees'].toString(),
                     Icons.check_circle,
-                    Colors.purple,
+                    const [Color(0xFF8E2DE2), Color(0xFF4A00E0)],
                   ),
                 ],
               ),
-              const SizedBox(height: 24.0),
+              const SizedBox(height: 32.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     "Upcoming Graduation Events",
-                    style: Theme.of(context).textTheme.titleLarge,
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.deepPurple,
+                        ),
                   ),
                   QButton(
                     label: "View All",
                     onPressed: () {},
+                    color: Colors.deepPurple,
                   ),
                 ],
               ),
-              const SizedBox(height: 16.0),
+              const SizedBox(height: 20.0),
               // Upcoming Events List
               ListView.builder(
                 shrinkWrap: true,
@@ -153,70 +161,81 @@ class _HomeViewState extends State<HomeView> {
                 itemBuilder: (context, index) {
                   final event = graduationEvents[index];
                   return Card(
-                    margin: const EdgeInsets.only(bottom: 12.0),
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    margin: const EdgeInsets.only(bottom: 16.0),
                     child: Padding(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             event['event_name'],
-                            style: Theme.of(context).textTheme.titleMedium,
+                            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.deepPurple[700],
+                                ),
                           ),
-                          const SizedBox(height: 8.0),
+                          const SizedBox(height: 12.0),
                           Row(
                             children: [
-                              const Icon(Icons.calendar_today, size: 16.0),
+                              const Icon(Icons.calendar_today, size: 18.0, color: Colors.grey),
                               const SizedBox(width: 8.0),
                               Text(
                                 DateTime.parse(event['graduation_date'])
                                     .toLocal()
                                     .toString()
                                     .split(' ')[0],
+                                style: const TextStyle(color: Colors.grey),
                               ),
-                              const SizedBox(width: 16.0),
-                              const Icon(Icons.schedule, size: 16.0),
+                              const SizedBox(width: 24.0),
+                              const Icon(Icons.schedule, size: 18.0, color: Colors.grey),
                               const SizedBox(width: 8.0),
-                              Text(event['graduation_time']),
+                              Text(
+                                event['graduation_time'],
+                                style: const TextStyle(color: Colors.grey),
+                              ),
                             ],
                           ),
-                          const SizedBox(height: 8.0),
+                          const SizedBox(height: 12.0),
                           Row(
                             children: [
-                              const Icon(Icons.location_on, size: 16.0),
+                              const Icon(Icons.location_on, size: 18.0, color: Colors.grey),
                               const SizedBox(width: 8.0),
                               Expanded(
                                 child: Text(
                                   event['venue'],
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(color: Colors.grey),
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 8.0),
+                          const SizedBox(height: 12.0),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
                                 "Capacity: ${event['current_registrations']}/${event['total_capacity']}",
+                                style: const TextStyle(fontWeight: FontWeight.w500),
                               ),
                               Container(
                                 padding: const EdgeInsets.symmetric(
-                                  horizontal: 8.0,
-                                  vertical: 4.0,
+                                  horizontal: 12.0,
+                                  vertical: 6.0,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: _getStatusColor(event['event_status'])
-                                      .withAlpha(30),
-                                  borderRadius: BorderRadius.circular(12.0),
+                                  color: _getStatusColor(event['event_status']).withOpacity(0.15),
+                                  borderRadius: BorderRadius.circular(20.0),
                                 ),
                                 child: Text(
                                   event['event_status'].toUpperCase(),
                                   style: TextStyle(
-                                    color:
-                                        _getStatusColor(event['event_status']),
-                                    fontSize: 12.0,
+                                    color: _getStatusColor(event['event_status']),
+                                    fontSize: 13.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -237,34 +256,45 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Widget _buildStatCard(
-      String title, String value, IconData icon, Color color) {
+      String title, String value, IconData icon, List<Color> gradientColors) {
     return Container(
-      padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: color.withAlpha(30),
-        borderRadius: BorderRadius.circular(12.0),
+        gradient: LinearGradient(
+          colors: gradientColors,
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: [
+          BoxShadow(
+            color: gradientColors.last.withOpacity(0.4),
+            offset: const Offset(0, 8),
+            blurRadius: 12,
+          ),
+        ],
       ),
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             icon,
-            size: 32.0,
-            color: color,
+            size: 36.0,
+            color: Colors.white,
           ),
-          const SizedBox(height: 8.0),
+          const SizedBox(height: 12.0),
           Text(
             value,
             style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  color: color,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          const SizedBox(height: 4.0),
+          const SizedBox(height: 6.0),
           Text(
             title,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: color,
+                  color: Colors.white70,
                 ),
             textAlign: TextAlign.center,
           ),

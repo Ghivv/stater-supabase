@@ -79,7 +79,7 @@ class DemoView extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => view!,
+                          builder: (context) => view,
                         ),
                       );
 
@@ -199,7 +199,7 @@ class DemoView extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => view!,
+                                      builder: (context) => view,
                                     ),
                                   );
 
@@ -432,7 +432,7 @@ class DemoView extends StatelessWidget {
                                       builder: (context) => Column(
                                         children: [
                                           Expanded(
-                                            child: child!,
+                                            child: child,
                                           ),
                                           if (reviewModeEnabled)
                                             Material(
